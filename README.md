@@ -19,7 +19,7 @@ Install a specific version of the envconsul:
 - name: Install envconsul
   uses: bloominlabs/setup-envconsul@v1
   with:
-    envconsul-version: 3.3.0
+    envconsul-version: 0.12.1
 ```
 
 Install a version that adheres to a semver range
@@ -28,7 +28,7 @@ Install a version that adheres to a semver range
 - name: Install envconsul
   uses: bloominlabs/setup-envconsul@v1
   with:
-    envconsul-version: ^3.0.0
+    envconsul-version: ^0.12.0
 ```
 
 ## Configuration
