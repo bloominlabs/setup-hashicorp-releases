@@ -1,4 +1,4 @@
-name: "Setup hashicorp releases"
+name: "Setup HashiCorp Releases"
 description: "Download and setup binary from releases.hashicorp.com in a GitHub Actions build environment"
 author: "Bloomin' Labs"
 inputs:
