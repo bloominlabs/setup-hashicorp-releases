@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
+          cache: ${{ !env.ACT && 'yarn' || '' }}
           node-version: "16.x"
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile --ignore-optional
@@ -29,11 +30,14 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
+          cache: ${{ !env.ACT && 'yarn' || '' }}
           node-version: "16.x"
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile --ignore-optional
       - run: yarn package
       - uses: ./
+        with:
+          package: envconsul
       - run: envconsul --version
   specific:
     name: Test Specific Version Install
@@ -44,13 +48,15 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
+          cache: ${{ !env.ACT && 'yarn' || '' }}
           node-version: "16.x"
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile --ignore-optional
       - run: yarn package
       - uses: ./
         with:
-          envconsul-version: 0.11.0
+          package: envconsul
+          version: 0.11.0
       - run: envconsul --version
   patch-range:
     name: Test Patch Range Version Install
@@ -61,13 +67,15 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
+          cache: ${{ !env.ACT && 'yarn' || '' }}
           node-version: "16.x"
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile --ignore-optional
       - run: yarn package
       - uses: ./
         with:
-          envconsul-version: 0.12.*
+          package: envconsul
+          version: 0.12.*
       - run: envconsul --version
   major-range:
     name: Test Patch Range Version Install
@@ -78,11 +86,13 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
+          cache: ${{ !env.ACT && 'yarn' || '' }}
           node-version: "16.x"
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile --ignore-optional
       - run: yarn package
       - uses: ./
         with:
-          envconsul-version: ^0.12.1
+          package: envconsul
+          version: ^0.12.1
       - run: envconsul --version

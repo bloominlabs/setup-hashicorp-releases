@@ -11,6 +11,8 @@ Install the latest version of the envconsul:
 ```yaml
 - name: Install envconsul
   uses: bloominlabs/setup-envconsul@v1
+  with:
+    package: envconsul
 ```
 
 Install a specific version of the envconsul:
@@ -19,7 +21,8 @@ Install a specific version of the envconsul:
 - name: Install envconsul
   uses: bloominlabs/setup-envconsul@v1
   with:
-    envconsul-version: 0.12.1
+    package: envconsul
+    version: 0.12.1
 ```
 
 Install a version that adheres to a semver range
@@ -28,7 +31,8 @@ Install a version that adheres to a semver range
 - name: Install envconsul
   uses: bloominlabs/setup-envconsul@v1
   with:
-    envconsul-version: ^0.12.0
+    package: envconsul
+    version: ^0.12.0
 ```
 
 ## Configuration
