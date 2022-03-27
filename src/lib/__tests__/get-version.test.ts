@@ -1,10 +1,12 @@
+import got from "got/dist/source";
 import * as playback from "jest-playback";
+import * as types from "../types";
 import { getVersionObject } from "../get-version";
 playback.setup(__dirname);
 
 describe("get-version", () => {
   process.env.GITHUB_TOKEN = process.env.GITHUB_TOKEN || "my-token";
-  describe("range versions", () => {
+  describe("range versions - envconsul", () => {
     it.each([
       "latest",
       "^0",
@@ -16,7 +18,14 @@ describe("get-version", () => {
       "v0.12.0",
       "0.12.1",
     ] as const)("should match %s versions", async (ver) => {
-      const v = await getVersionObject(ver);
+      const result = await got(
+        "https://releases.hashicorp.com/envconsul/index.json",
+        {
+          responseType: "json",
+        }
+      );
+
+      const v = await getVersionObject(types.IndexRt.check(result.body), ver);
       expect(v.version).toMatchSnapshot();
     });
   });

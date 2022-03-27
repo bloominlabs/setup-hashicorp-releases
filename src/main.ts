@@ -5,6 +5,8 @@ import * as os from "os";
 import * as io from "@actions/io";
 import * as path from "path";
 import { getVersionObject } from "./lib/get-version";
+import got from "got/dist/source";
+import * as types from "./lib/types";
 
 async function run() {
   try {
@@ -20,25 +22,40 @@ async function run() {
       win32: "windows",
     };
     const runnerPlatform = os.platform();
+    const pkgName = core.getInput("package");
 
     if (!(runnerPlatform in nodePlatformToReleasePlatform)) {
       throw new Error(
-        `Unsupported operating system - envconsul is only released for ${Object.keys(
+        `Unsupported operating system - ${pkgName} is only released for ${Object.keys(
           nodePlatformToReleasePlatform
         ).join(", ")}`
       );
     }
 
+    const result = await got<Record<string, unknown>>(
+      "https://releases.hashicorp.com/index.json",
+      {
+        responseType: "json",
+      }
+    );
+    const root = result.body[pkgName];
+    if (!root) {
+      throw new Error(
+        `Could not find package - ${pkgName}. Check https://releases.hashicorp.com/index.json for valid keys.`
+      );
+    }
+
+    const index = types.IndexRt.check(root);
     const releasePlatform = nodePlatformToReleasePlatform[runnerPlatform];
     const releaseArch = nodeArchToReleaseArch[os.arch()];
 
-    const range = core.getInput("envconsul-version");
+    const range = core.getInput("version");
     core.info(`Configured range: ${range}`);
-    const { version, builds } = await getVersionObject(range);
+    const { version, builds } = await getVersionObject(index, range);
 
     core.info(`Matched version: ${version}`);
 
-    const destination = path.join(os.homedir(), ".envconsul");
+    const destination = path.join(os.homedir(), `.${pkgName}`);
     core.info(`Install destination is ${destination}`);
 
     await io
@@ -77,14 +94,14 @@ async function run() {
     }
 
     core.info(`Successfully extracted ${downloaded} to ${extractedPath}`);
-    const oldPath = path.join(destination, "envconsul");
-    const newPath = path.join(destination, "bin", "envconsul");
+    const oldPath = path.join(destination, pkgName);
+    const newPath = path.join(destination, "bin", pkgName);
     await io.mv(oldPath, newPath);
     core.info(`Successfully renamed ${oldPath} to ${newPath}`);
 
     const cachedPath = await tc.cacheDir(
       path.join(destination, "bin"),
-      "envconsul",
+      pkgName,
       version
     );
     core.addPath(cachedPath);

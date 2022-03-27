@@ -1,59 +1,11 @@
-import * as core from "@actions/core";
-import got from "got";
 import * as rt from "runtypes";
 import { maxSatisfying, gte } from "semver";
-const fetch = require("node-fetch");
+import * as types from "./types";
 
-const OsRt = rt.Union(
-  rt.Literal("darwin"),
-  rt.Literal("dragonfly"),
-  rt.Literal("freebsd"),
-  rt.Literal("linux"),
-  rt.Literal("netbsd"),
-  rt.Literal("openbsd"),
-  rt.Literal("solaris"),
-  rt.Literal("windows")
-);
-
-const ArchRt = rt.Union(
-  rt.Literal("arm"),
-  rt.Literal("arm64"),
-  rt.Literal("amd64"),
-  rt.Literal("386")
-);
-
-const BuildRt = rt.Record({
-  name: rt.String,
-  version: rt.String,
-  os: OsRt,
-  arch: ArchRt,
-  filename: rt.String,
-  url: rt.String,
-});
-
-const VersionRt = rt.Record({
-  name: rt.String,
-  version: rt.String,
-  shasums: rt.String,
-  shasums_signature: rt.String,
-  shasums_signatures: rt.Array(rt.String),
-  builds: rt.Array(BuildRt),
-});
-
-const IndexRt = rt.Record({
-  name: rt.String,
-  versions: rt.Dictionary(VersionRt),
-});
-
-export type Version = rt.Static<typeof VersionRt>;
-
-export async function getVersionObject(range: string): Promise<Version> {
-  const result = await got(
-    "https://releases.hashicorp.com/envconsul/index.json",
-    { responseType: "json" }
-  );
-
-  const index = IndexRt.check(result.body);
+export async function getVersionObject(
+  index: types.Index,
+  range: string
+): Promise<types.Version> {
   const versions = index.versions;
   if (range == "latest") {
     const latest = Object.keys(versions).reduce((prev, cur) => {

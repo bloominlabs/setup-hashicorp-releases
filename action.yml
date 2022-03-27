@@ -1,9 +1,12 @@
-name: "Setup envconsul"
-description: "Setup the envconsul in a GitHub Actions build environment"
+name: "Setup hashicorp releases"
+description: "Download and setup binary from releases.hashicorp.com in a GitHub Actions build environment"
 author: "Bloomin' Labs"
 inputs:
-  envconsul-version:
-    description: "Version of the envconsul to install, or 'latest' (default). This accepts semver ranges like ^3.0.0."
+  package:
+    description: "Name of the package to install"
+    required: true
+  version:
+    description: "Version of the package to install, or 'latest' (default). This accepts semver ranges like ^3.0.0."
     required: true
     default: "latest"
 branding:
