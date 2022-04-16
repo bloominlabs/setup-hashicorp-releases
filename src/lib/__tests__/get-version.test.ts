@@ -29,4 +29,18 @@ describe("get-version", () => {
       expect(v.version).toMatchSnapshot();
     });
   });
+
+  describe("range versions - packer", () => {
+    it.each(["latest"] as const)("should match %s versions", async (ver) => {
+      const result = await got(
+        "https://releases.hashicorp.com/packer/index.json",
+        {
+          responseType: "json",
+        }
+      );
+
+      const v = await getVersionObject(types.IndexRt.check(result.body), ver);
+      expect(v.version).toMatchSnapshot();
+    });
+  });
 });

@@ -15,7 +15,8 @@ const ArchRt = rt.Union(
   rt.Literal("arm"),
   rt.Literal("arm64"),
   rt.Literal("amd64"),
-  rt.Literal("386")
+  rt.Literal("386"),
+  rt.Literal("ppc64le")
 );
 
 const BuildRt = rt.Record({
