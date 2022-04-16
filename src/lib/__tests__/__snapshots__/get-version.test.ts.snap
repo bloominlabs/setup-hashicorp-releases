@@ -17,3 +17,5 @@ exports[`get-version range versions - envconsul should match v0.*.* versions 1`]
 exports[`get-version range versions - envconsul should match v0.12.* versions 1`] = `"0.12.1"`;
 
 exports[`get-version range versions - envconsul should match v0.12.0 versions 1`] = `"0.12.0"`;
+
+exports[`get-version range versions - packer should match latest versions 1`] = `"1.8.0"`;

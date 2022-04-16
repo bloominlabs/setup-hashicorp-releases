@@ -16,6 +16,10 @@ const ArchRt = rt.Union(
   rt.Literal("arm64"),
   rt.Literal("amd64"),
   rt.Literal("386"),
+  rt.Literal("mips"),
+  rt.Literal("mips64"),
+  rt.Literal("mipsle"),
+  rt.Literal("s390x"),
   rt.Literal("ppc64le")
 );
 
