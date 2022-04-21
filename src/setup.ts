@@ -1,12 +1,17 @@
-import * as core from "@actions/core";
-import * as tc from "@actions/tool-cache";
 import * as fs from "fs";
 import * as os from "os";
-import * as io from "@actions/io";
 import * as path from "path";
-import { getVersionObject } from "./lib/get-version";
+
+import * as io from "@actions/io";
+import * as core from "@actions/core";
+import * as tc from "@actions/tool-cache";
 import got from "got/dist/source";
+
+import { getVersionObject } from "./lib/get-version";
+import { restoreCache } from "./cache-restore";
 import * as types from "./lib/types";
+
+const IS_WINDOWS = process.platform === "win32";
 
 async function run() {
   try {
@@ -58,13 +63,36 @@ async function run() {
     const destination = path.join(os.homedir(), `.${pkgName}`);
     core.info(`Install destination is ${destination}`);
 
+    const installationDir = path.join(destination, "bin");
+    const installationPath = path.join(
+      installationDir,
+      `${pkgName}${IS_WINDOWS ? ".exe" : ""}`
+    );
+    core.info(`Matched version: ${version}`);
+
+    // first see if package is in the toolcache (installed locally)
+    const toolcacheDir = tc.find(pkgName, version, os.arch());
+
+    if (toolcacheDir) {
+      core.addPath(toolcacheDir);
+      core.info(`using earthly from toolcache (${toolcacheDir})`);
+      return;
+    }
+
+    // then try to restore package from the github action cache
+    core.addPath(installationDir);
+    const restored = await restoreCache(pkgName, installationPath, version);
+    if (restored) {
+      await fs.promises.chmod(installationPath, 0o755);
+      return;
+    }
+
+    // finally, dowload release binary
     await io
-      .rmRF(path.join(destination, "bin"))
+      .rmRF(installationDir)
       .catch()
       .then(() => {
-        core.info(
-          `Successfully deleted pre-existing ${path.join(destination, "bin")}`
-        );
+        core.info(`Successfully deleted pre-existing ${installationDir}`);
       });
 
     const build = builds.find((b) => {
@@ -77,7 +105,7 @@ async function run() {
       );
     }
 
-    const downloaded = await tc.downloadTool(build.url);
+    const downloaded = await tc.downloadTool(build.url, installationPath);
     core.debug(`successfully downloaded ${build.name}@${build.version}`);
 
     await io.mkdirP(destination);
@@ -99,12 +127,12 @@ async function run() {
     await io.mv(oldPath, newPath);
     core.info(`Successfully renamed ${oldPath} to ${newPath}`);
 
-    const cachedPath = await tc.cacheDir(
+    await tc.cacheDir(
       path.join(destination, "bin"),
       pkgName,
-      version
+      version,
+      os.arch()
     );
-    core.addPath(cachedPath);
   } catch (error: unknown) {
     if (error instanceof Error) {
       core.setFailed(error.message);

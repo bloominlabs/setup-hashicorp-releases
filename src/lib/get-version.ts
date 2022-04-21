@@ -1,4 +1,3 @@
-import * as rt from "runtypes";
 import { maxSatisfying, gte } from "semver";
 import * as types from "./types";
 
