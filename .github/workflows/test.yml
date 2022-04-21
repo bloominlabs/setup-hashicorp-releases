@@ -14,11 +14,11 @@ jobs:
         platform: [ubuntu-latest, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'yarn' || '' }}
           node-version: "16.x"
-      - uses: actions/checkout@v3
       - run: yarn install --frozen-lockfile --ignore-optional
       - run: yarn test
   latest:
@@ -28,11 +28,11 @@ jobs:
         platform: [ubuntu-latest, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'yarn' || '' }}
           node-version: "16.x"
-      - uses: actions/checkout@v3
       - run: yarn install --frozen-lockfile --ignore-optional
       - run: yarn package
       - uses: ./
@@ -46,11 +46,11 @@ jobs:
         platform: [ubuntu-latest, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'yarn' || '' }}
           node-version: "16.x"
-      - uses: actions/checkout@v3
       - run: yarn install --frozen-lockfile --ignore-optional
       - run: yarn package
       - uses: ./
@@ -65,11 +65,11 @@ jobs:
         platform: [ubuntu-latest, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'yarn' || '' }}
           node-version: "16.x"
-      - uses: actions/checkout@v3
       - run: yarn install --frozen-lockfile --ignore-optional
       - run: yarn package
       - uses: ./
@@ -84,11 +84,11 @@ jobs:
         platform: [ubuntu-latest, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'yarn' || '' }}
           node-version: "16.x"
-      - uses: actions/checkout@v3
       - run: yarn install --frozen-lockfile --ignore-optional
       - run: yarn package
       - uses: ./
