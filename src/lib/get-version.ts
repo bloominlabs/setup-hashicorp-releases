@@ -15,7 +15,6 @@ export async function getVersionObject(
   }
 
   const resp = maxSatisfying(Object.keys(versions), range);
-  console.log(resp);
   if (resp === null) {
     throw new Error(
       "Could not find a version that satisfied the version range"

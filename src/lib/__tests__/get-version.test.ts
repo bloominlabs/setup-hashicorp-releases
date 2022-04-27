@@ -43,4 +43,22 @@ describe("get-version", () => {
       expect(v.version).toMatchSnapshot();
     });
   });
+
+  describe("range versions - nomad", () => {
+    it.each(["latest"] as const)("should match %s versions", async (ver) => {
+      try {
+        const result = await got(
+          "https://releases.hashicorp.com/nomad/index.json",
+          {
+            responseType: "json",
+          }
+        );
+
+        const v = await getVersionObject(types.IndexRt.check(result.body), ver);
+        expect(v.version).toMatchSnapshot();
+      } catch (e) {
+        console.log((e as any).details.versions["0.5.0"]);
+      }
+    });
+  });
 });
