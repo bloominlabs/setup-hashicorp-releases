@@ -60,4 +60,32 @@ describe("get-version", () => {
       }
     );
   });
+
+  describe("range versions - consul", () => {
+    it.each(["v1.2"] as const)("should match %s versions", async (ver) => {
+      const result = await got(
+        "https://releases.hashicorp.com/consul/index.json",
+        {
+          responseType: "json",
+        }
+      );
+
+      const v = await getVersionObject(types.IndexRt.check(result.body), ver);
+      expect(v.version).toMatchSnapshot();
+    });
+  });
+
+  describe("range versions - vault", () => {
+    it.each(["v1.2"] as const)("should match %s versions", async (ver) => {
+      const result = await got(
+        "https://releases.hashicorp.com/vault/index.json",
+        {
+          responseType: "json",
+        }
+      );
+
+      const v = await getVersionObject(types.IndexRt.check(result.body), ver);
+      expect(v.version).toMatchSnapshot();
+    });
+  });
 });

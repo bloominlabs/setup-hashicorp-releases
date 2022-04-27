@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`get-version range versions - consul should match v1.2 versions 1`] = `"1.2.4"`;
+
 exports[`get-version range versions - envconsul should match ^0 versions 1`] = `"0.12.1"`;
 
 exports[`get-version range versions - envconsul should match 0.*.* versions 1`] = `"0.12.1"`;
@@ -23,3 +25,5 @@ exports[`get-version range versions - nomad should match latest versions 1`] = `
 exports[`get-version range versions - nomad should match v1.2 versions 1`] = `"1.2.6"`;
 
 exports[`get-version range versions - packer should match latest versions 1`] = `"1.8.0"`;
+
+exports[`get-version range versions - vault should match v1.2 versions 1`] = `"1.2.7"`;

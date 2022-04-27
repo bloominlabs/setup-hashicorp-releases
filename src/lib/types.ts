@@ -8,7 +8,8 @@ const OsRt = rt.Union(
   rt.Literal("netbsd"),
   rt.Literal("openbsd"),
   rt.Literal("solaris"),
-  rt.Literal("windows")
+  rt.Literal("windows"),
+  rt.Literal("web")
 );
 
 const ArchRt = rt.Union(
@@ -24,7 +25,10 @@ const ArchRt = rt.Union(
   rt.Literal("amd64-lxc"),
   rt.Literal("arm5"),
   rt.Literal("arm6"),
-  rt.Literal("arm7")
+  rt.Literal("arm7"),
+  rt.Literal("armhfv6"),
+  rt.Literal("armelv5"),
+  rt.Literal("ui")
 );
 
 const BuildRt = rt.Record({
