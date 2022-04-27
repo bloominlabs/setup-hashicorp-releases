@@ -45,8 +45,9 @@ describe("get-version", () => {
   });
 
   describe("range versions - nomad", () => {
-    it.each(["latest"] as const)("should match %s versions", async (ver) => {
-      try {
+    it.each(["latest", "v1.2"] as const)(
+      "should match %s versions",
+      async (ver) => {
         const result = await got(
           "https://releases.hashicorp.com/nomad/index.json",
           {
@@ -56,9 +57,7 @@ describe("get-version", () => {
 
         const v = await getVersionObject(types.IndexRt.check(result.body), ver);
         expect(v.version).toMatchSnapshot();
-      } catch (e) {
-        console.log((e as any).details.versions["0.5.0"]);
       }
-    });
+    );
   });
 });
