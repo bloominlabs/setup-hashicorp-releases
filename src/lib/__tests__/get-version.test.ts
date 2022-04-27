@@ -43,4 +43,21 @@ describe("get-version", () => {
       expect(v.version).toMatchSnapshot();
     });
   });
+
+  describe("range versions - nomad", () => {
+    it.each(["latest", "v1.2"] as const)(
+      "should match %s versions",
+      async (ver) => {
+        const result = await got(
+          "https://releases.hashicorp.com/nomad/index.json",
+          {
+            responseType: "json",
+          }
+        );
+
+        const v = await getVersionObject(types.IndexRt.check(result.body), ver);
+        expect(v.version).toMatchSnapshot();
+      }
+    );
+  });
 });

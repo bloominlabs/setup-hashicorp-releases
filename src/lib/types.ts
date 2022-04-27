@@ -20,7 +20,11 @@ const ArchRt = rt.Union(
   rt.Literal("mips64"),
   rt.Literal("mipsle"),
   rt.Literal("s390x"),
-  rt.Literal("ppc64le")
+  rt.Literal("ppc64le"),
+  rt.Literal("amd64-lxc"),
+  rt.Literal("arm5"),
+  rt.Literal("arm6"),
+  rt.Literal("arm7")
 );
 
 const BuildRt = rt.Record({
