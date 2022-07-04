@@ -37,16 +37,24 @@ async function run() {
       );
     }
 
-    const result = await got("https://releases.hashicorp.com/index.json", {
-      headers: { Accept: "application/json" },
-    }).json<Record<string, unknown>>();
-    const root = result[pkgName];
-    if (!root) {
-      throw new Error(
-        `Could not find package - ${pkgName}. Check https://releases.hashicorp.com/index.json for valid keys.`
-      );
+    let result: unknown | undefined;
+    try {
+      result = await got(
+        `https://releases.hashicorp.com/${pkgName}/index.json`,
+        {
+          headers: { Accept: "application/json" },
+        }
+      ).json<Record<string, unknown>>();
+    } catch (e: unknown) {
+      if (e instanceof got.RequestError && e.response?.statusCode == 404) {
+        throw new Error(
+          `Could not find package - ${pkgName}. Check https://releases.hashicorp.com/index.json for valid keys.`
+        );
+      }
+      throw e;
     }
 
+    const root = result;
     const index = types.IndexRt.check(root);
     const releasePlatform = nodePlatformToReleasePlatform[runnerPlatform];
     const releaseArch = nodeArchToReleaseArch[os.arch()];
