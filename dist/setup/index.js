@@ -73767,6 +73767,7 @@ const cache_restore_1 = __nccwpck_require__(937);
 const types = __importStar(__nccwpck_require__(5427));
 const IS_WINDOWS = process.platform === "win32";
 function run() {
+    var _a;
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const nodeArchToReleaseArch = {
@@ -73785,13 +73786,19 @@ function run() {
             if (!(runnerPlatform in nodePlatformToReleasePlatform)) {
                 throw new Error(`Unsupported operating system - ${pkgName} is only released for ${Object.keys(nodePlatformToReleasePlatform).join(", ")}`);
             }
-            const result = yield (0, got_1.default)("https://releases.hashicorp.com/index.json", {
-                headers: { Accept: "application/json" },
-            }).json();
-            const root = result[pkgName];
-            if (!root) {
-                throw new Error(`Could not find package - ${pkgName}. Check https://releases.hashicorp.com/index.json for valid keys.`);
+            let result;
+            try {
+                result = yield (0, got_1.default)(`https://releases.hashicorp.com/${pkgName}/index.json`, {
+                    headers: { Accept: "application/json" },
+                }).json();
             }
+            catch (e) {
+                if (e instanceof got_1.default.RequestError && ((_a = e.response) === null || _a === void 0 ? void 0 : _a.statusCode) == 404) {
+                    throw new Error(`Could not find package - ${pkgName}. Check https://releases.hashicorp.com/index.json for valid keys.`);
+                }
+                throw e;
+            }
+            const root = result;
             const index = types.IndexRt.check(root);
             const releasePlatform = nodePlatformToReleasePlatform[runnerPlatform];
             const releaseArch = nodeArchToReleaseArch[os.arch()];
