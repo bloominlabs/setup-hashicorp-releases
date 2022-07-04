@@ -15,12 +15,15 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
-          cache: ${{ !env.ACT && 'yarn' || '' }}
+          cache: ${{ !env.ACT && 'pnpm' || '' }}
           node-version: "16.x"
-      - run: yarn install --frozen-lockfile --ignore-optional
-      - run: yarn test
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
   latest:
     name: Test Latest Version Install
     strategy:
@@ -29,12 +32,15 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
-          cache: ${{ !env.ACT && 'yarn' || '' }}
+          cache: ${{ !env.ACT && 'pnpm' || '' }}
           node-version: "16.x"
-      - run: yarn install --frozen-lockfile --ignore-optional
-      - run: yarn package
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm package
       - uses: ./
         with:
           package: envconsul
@@ -47,12 +53,15 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
-          cache: ${{ !env.ACT && 'yarn' || '' }}
+          cache: ${{ !env.ACT && 'pnpm' || '' }}
           node-version: "16.x"
-      - run: yarn install --frozen-lockfile --ignore-optional
-      - run: yarn package
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm package
       - uses: ./
         with:
           package: envconsul
@@ -66,12 +75,15 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
-          cache: ${{ !env.ACT && 'yarn' || '' }}
+          cache: ${{ !env.ACT && 'pnpm' || '' }}
           node-version: "16.x"
-      - run: yarn install --frozen-lockfile --ignore-optional
-      - run: yarn package
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm package
       - uses: ./
         with:
           package: envconsul
@@ -85,12 +97,15 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
-          cache: ${{ !env.ACT && 'yarn' || '' }}
+          cache: ${{ !env.ACT && 'pnpm' || '' }}
           node-version: "16.x"
-      - run: yarn install --frozen-lockfile --ignore-optional
-      - run: yarn package
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm package
       - uses: ./
         with:
           package: envconsul
@@ -105,12 +120,15 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
-          cache: ${{ !env.ACT && 'yarn' || '' }}
+          cache: ${{ !env.ACT && 'pnpm' || '' }}
           node-version: "16.x"
-      - run: yarn install --frozen-lockfile --ignore-optional
-      - run: yarn package
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm package
       - uses: ./
         with:
           package: nomad
@@ -125,12 +143,15 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
-          cache: ${{ !env.ACT && 'yarn' || '' }}
+          cache: ${{ !env.ACT && 'pnpm' || '' }}
           node-version: "16.x"
-      - run: yarn install --frozen-lockfile --ignore-optional
-      - run: yarn package
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm package
       - uses: ./
         with:
           package: packer
@@ -145,12 +166,15 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
-          cache: ${{ !env.ACT && 'yarn' || '' }}
+          cache: ${{ !env.ACT && 'pnpm' || '' }}
           node-version: "16.x"
-      - run: yarn install --frozen-lockfile --ignore-optional
-      - run: yarn package
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm package
       - uses: ./
         with:
           package: consul
@@ -165,12 +189,15 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
-          cache: ${{ !env.ACT && 'yarn' || '' }}
+          cache: ${{ !env.ACT && 'pnpm' || '' }}
           node-version: "16.x"
-      - run: yarn install --frozen-lockfile --ignore-optional
-      - run: yarn package
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm package
       - uses: ./
         with:
           package: vault

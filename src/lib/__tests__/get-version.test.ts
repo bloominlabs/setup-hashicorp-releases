@@ -1,4 +1,4 @@
-import got from "got/dist/source";
+import got from "got";
 import * as playback from "jest-playback";
 import * as types from "../types";
 import { getVersionObject } from "../get-version";
@@ -20,12 +20,10 @@ describe("get-version", () => {
     ] as const)("should match %s versions", async (ver) => {
       const result = await got(
         "https://releases.hashicorp.com/envconsul/index.json",
-        {
-          responseType: "json",
-        }
-      );
+        { headers: { Accept: "application/json" } }
+      ).json();
 
-      const v = await getVersionObject(types.IndexRt.check(result.body), ver);
+      const v = await getVersionObject(types.IndexRt.check(result), ver);
       expect(v.version).toMatchSnapshot();
     });
   });
@@ -34,12 +32,10 @@ describe("get-version", () => {
     it.each(["latest"] as const)("should match %s versions", async (ver) => {
       const result = await got(
         "https://releases.hashicorp.com/packer/index.json",
-        {
-          responseType: "json",
-        }
-      );
+        { headers: { Accept: "application/json" } }
+      ).json();
 
-      const v = await getVersionObject(types.IndexRt.check(result.body), ver);
+      const v = await getVersionObject(types.IndexRt.check(result), ver);
       expect(v.version).toMatchSnapshot();
     });
   });
@@ -50,12 +46,10 @@ describe("get-version", () => {
       async (ver) => {
         const result = await got(
           "https://releases.hashicorp.com/nomad/index.json",
-          {
-            responseType: "json",
-          }
-        );
+          { headers: { Accept: "application/json" } }
+        ).json();
 
-        const v = await getVersionObject(types.IndexRt.check(result.body), ver);
+        const v = await getVersionObject(types.IndexRt.check(result), ver);
         expect(v.version).toMatchSnapshot();
       }
     );
@@ -65,12 +59,10 @@ describe("get-version", () => {
     it.each(["v1.2"] as const)("should match %s versions", async (ver) => {
       const result = await got(
         "https://releases.hashicorp.com/consul/index.json",
-        {
-          responseType: "json",
-        }
-      );
+        { headers: { Accept: "application/json" } }
+      ).json();
 
-      const v = await getVersionObject(types.IndexRt.check(result.body), ver);
+      const v = await getVersionObject(types.IndexRt.check(result), ver);
       expect(v.version).toMatchSnapshot();
     });
   });
@@ -79,12 +71,10 @@ describe("get-version", () => {
     it.each(["v1.2"] as const)("should match %s versions", async (ver) => {
       const result = await got(
         "https://releases.hashicorp.com/vault/index.json",
-        {
-          responseType: "json",
-        }
-      );
+        { headers: { Accept: "application/json" } }
+      ).json();
 
-      const v = await getVersionObject(types.IndexRt.check(result.body), ver);
+      const v = await getVersionObject(types.IndexRt.check(result), ver);
       expect(v.version).toMatchSnapshot();
     });
   });

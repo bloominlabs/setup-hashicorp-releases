@@ -5,7 +5,7 @@ import * as path from "path";
 import * as io from "@actions/io";
 import * as core from "@actions/core";
 import * as tc from "@actions/tool-cache";
-import got from "got/dist/source";
+import got from "got";
 
 import { getVersionObject } from "./lib/get-version";
 import { restoreCache } from "./cache-restore";
@@ -37,13 +37,10 @@ async function run() {
       );
     }
 
-    const result = await got<Record<string, unknown>>(
-      "https://releases.hashicorp.com/index.json",
-      {
-        responseType: "json",
-      }
-    );
-    const root = result.body[pkgName];
+    const result = await got("https://releases.hashicorp.com/index.json", {
+      headers: { Accept: "application/json" },
+    }).json<Record<string, unknown>>();
+    const root = result[pkgName];
     if (!root) {
       throw new Error(
         `Could not find package - ${pkgName}. Check https://releases.hashicorp.com/index.json for valid keys.`
