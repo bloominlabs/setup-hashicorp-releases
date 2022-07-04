@@ -40048,7 +40048,7 @@ __exportStar(__nccwpck_require__(6255), exports);
 __exportStar(__nccwpck_require__(80), exports);
 __exportStar(__nccwpck_require__(6253), exports);
 __exportStar(__nccwpck_require__(866), exports);
-__exportStar(__nccwpck_require__(7818), exports);
+__exportStar(__nccwpck_require__(1845), exports);
 __exportStar(__nccwpck_require__(1427), exports);
 __exportStar(__nccwpck_require__(6338), exports);
 __exportStar(__nccwpck_require__(565), exports);
@@ -40819,7 +40819,7 @@ exports.ProxyTracerProvider = ProxyTracerProvider;
 
 /***/ }),
 
-/***/ 7818:
+/***/ 1845:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -54088,7 +54088,7 @@ module.exports.CancelError = CancelError;
 
 /***/ }),
 
-/***/ 581:
+/***/ 7818:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -54996,7 +54996,7 @@ __exportStar(__nccwpck_require__(4475), exports);
 __exportStar(__nccwpck_require__(6798), exports);
 __exportStar(__nccwpck_require__(4672), exports);
 __exportStar(__nccwpck_require__(2549), exports);
-__exportStar(__nccwpck_require__(8611), exports);
+__exportStar(__nccwpck_require__(581), exports);
 __exportStar(__nccwpck_require__(8002), exports);
 var instanceof_1 = __nccwpck_require__(1866);
 Object.defineProperty(exports, "InstanceOf", ({ enumerable: true, get: function () { return instanceof_1.InstanceOf; } }));
@@ -55795,7 +55795,7 @@ exports.Number = (0, runtype_1.create)(function (value) { return (typeof value =
 
 /***/ }),
 
-/***/ 8611:
+/***/ 581:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -64208,7 +64208,7 @@ exports.permuteDomain = permuteDomain;
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-const psl = __nccwpck_require__(581);
+const psl = __nccwpck_require__(7818);
 
 function getPublicSuffix(domain) {
   return psl.get(domain);
@@ -73612,6 +73612,29 @@ var Outputs;
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -73621,24 +73644,64 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.invariant = exports.getVersionObject = void 0;
+exports.invariant = exports.getVersionObject = exports.getVersionData = void 0;
 const semver_1 = __nccwpck_require__(1256);
+const types = __importStar(__nccwpck_require__(5427));
+const got_1 = __importDefault(__nccwpck_require__(8164));
+function getVersionData(service, licenseClass) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let previousLastTime = new Date().toISOString();
+        return yield got_1.default.paginate.all(`https://api.releases.hashicorp.com/v1/releases/${service}`, {
+            headers: { Accept: "application/json" },
+            http2: true,
+            searchParams: { limit: 20, license_class: licenseClass },
+            pagination: {
+                paginate: (_, currentItems) => {
+                    if (currentItems.length <= 0) {
+                        return false;
+                    }
+                    const lastItem = currentItems[currentItems.length - 1];
+                    if (previousLastTime === lastItem.timestamp_created) {
+                        return false;
+                    }
+                    previousLastTime = lastItem.timestamp_created;
+                    return {
+                        searchParams: {
+                            after: lastItem.timestamp_created,
+                        },
+                    };
+                },
+                requestLimit: 1000,
+                transform: (response) => {
+                    if (response.request.options.responseType === "json") {
+                        return types.IndexRt.check(response.body);
+                    }
+                    return types.IndexRt.check(JSON.parse(response.body));
+                },
+            },
+        });
+    });
+}
+exports.getVersionData = getVersionData;
 function getVersionObject(index, range) {
     return __awaiter(this, void 0, void 0, function* () {
-        const versions = index.versions;
         if (range == "latest") {
-            const latest = Object.keys(versions).reduce((prev, cur) => {
-                return (0, semver_1.gte)(cur, prev) ? cur : prev;
+            const latest = index.reduce((prev, cur) => {
+                return (0, semver_1.gte)(cur.version, prev.version) ? cur : prev;
             });
             invariant(latest, "expect a latest version to exists");
-            return versions[latest];
+            return latest;
         }
-        const resp = (0, semver_1.maxSatisfying)(Object.keys(versions), range);
-        if (resp === null) {
+        const versions = index.map((version) => version.version);
+        const maxSatisfyingSemverVersion = (0, semver_1.maxSatisfying)(versions, range);
+        if (maxSatisfyingSemverVersion === null) {
             throw new Error("Could not find a version that satisfied the version range");
         }
-        const ver = versions[resp];
+        const ver = index.filter((version) => version.version == maxSatisfyingSemverVersion)[0];
         if (!ver) {
             throw new Error("Could not find a version that satisfied the version range");
         }
@@ -73691,25 +73754,17 @@ const rt = __importStar(__nccwpck_require__(1226));
 const OsRt = rt.Union(rt.Literal("darwin"), rt.Literal("dragonfly"), rt.Literal("freebsd"), rt.Literal("linux"), rt.Literal("netbsd"), rt.Literal("openbsd"), rt.Literal("solaris"), rt.Literal("windows"), rt.Literal("web"));
 const ArchRt = rt.Union(rt.Literal("arm"), rt.Literal("arm64"), rt.Literal("amd64"), rt.Literal("386"), rt.Literal("mips"), rt.Literal("mips64"), rt.Literal("mipsle"), rt.Literal("s390x"), rt.Literal("ppc64le"), rt.Literal("amd64-lxc"), rt.Literal("arm5"), rt.Literal("arm6"), rt.Literal("arm7"), rt.Literal("armhfv6"), rt.Literal("armelv5"), rt.Literal("ui"));
 const BuildRt = rt.Record({
-    name: rt.String,
-    version: rt.String,
     os: OsRt,
     arch: ArchRt,
-    filename: rt.String,
     url: rt.String,
 });
 const VersionRt = rt.Record({
     name: rt.String,
     version: rt.String,
-    shasums: rt.String,
-    shasums_signature: rt.String,
-    shasums_signatures: rt.Array(rt.String),
+    timestamp_created: rt.String,
     builds: rt.Array(BuildRt),
 });
-exports.IndexRt = rt.Record({
-    name: rt.String,
-    versions: rt.Dictionary(VersionRt),
-});
+exports.IndexRt = rt.Array(VersionRt);
 
 
 /***/ }),
@@ -73783,14 +73838,13 @@ function run() {
             };
             const runnerPlatform = os.platform();
             const pkgName = core.getInput("package");
+            const license_class = core.getInput("licenseClass");
             if (!(runnerPlatform in nodePlatformToReleasePlatform)) {
                 throw new Error(`Unsupported operating system - ${pkgName} is only released for ${Object.keys(nodePlatformToReleasePlatform).join(", ")}`);
             }
             let result;
             try {
-                result = yield (0, got_1.default)(`https://releases.hashicorp.com/${pkgName}/index.json`, {
-                    headers: { Accept: "application/json" },
-                }).json();
+                result = yield (0, get_version_1.getVersionData)(pkgName, license_class);
             }
             catch (e) {
                 if (e instanceof got_1.default.RequestError && ((_a = e.response) === null || _a === void 0 ? void 0 : _a.statusCode) == 404) {
@@ -73804,7 +73858,7 @@ function run() {
             const releaseArch = nodeArchToReleaseArch[os.arch()];
             const range = core.getInput("version");
             core.info(`Configured range: ${range}`);
-            const { version, builds } = yield (0, get_version_1.getVersionObject)(index, range);
+            const { name, version, builds } = yield (0, get_version_1.getVersionObject)(index, range);
             core.info(`Matched version: ${version}`);
             const destination = path.join(os.homedir(), `.${pkgName}`);
             core.info(`Install destination is ${destination}`);
@@ -73839,7 +73893,7 @@ function run() {
                 throw new Error(`Could not find build with requested architecture, os, and version. arch: ${releaseArch}, os: ${releasePlatform}, version: ${version}`);
             }
             const downloaded = yield tc.downloadTool(build.url, installationPath);
-            core.debug(`successfully downloaded ${build.name}@${build.version}`);
+            core.debug(`successfully downloaded ${name}@${version}`);
             yield io.mkdirP(destination);
             core.info(`Successfully created ${destination}`);
             let extractedPath;

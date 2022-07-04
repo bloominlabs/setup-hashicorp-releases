@@ -60,7 +60,7 @@ async function run() {
 
     const range = core.getInput("version");
     core.info(`Configured range: ${range}`);
-    const { version, builds } = await getVersionObject(index, range);
+    const { name, version, builds } = await getVersionObject(index, range);
 
     core.info(`Matched version: ${version}`);
 
@@ -110,7 +110,7 @@ async function run() {
     }
 
     const downloaded = await tc.downloadTool(build.url, installationPath);
-    core.debug(`successfully downloaded ${build.name}@${build.version}`);
+    core.debug(`successfully downloaded ${name}@${version}`);
 
     await io.mkdirP(destination);
     core.info(`Successfully created ${destination}`);
