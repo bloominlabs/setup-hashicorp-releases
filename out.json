@@ -1,0 +1,1376 @@
+[
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent.hsm.fips1402/vault_1.11.0+ent.hsm.fips1402_linux_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-20T21:44:21.656Z"
+    },
+    "timestamp_created": "2022-06-20T21:44:21.656Z",
+    "timestamp_updated": "2022-06-20T21:44:21.656Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.11.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.11.0+ent.hsm.fips1402/vault_1.11.0+ent.hsm.fips1402_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.11.0+ent.hsm.fips1402/vault_1.11.0+ent.hsm.fips1402_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.11.0+ent.hsm.fips1402/vault_1.11.0+ent.hsm.fips1402_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.11.0+ent.hsm.fips1402"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent.fips1402/vault_1.11.0+ent.fips1402_linux_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-20T21:44:19.257Z"
+    },
+    "timestamp_created": "2022-06-20T21:44:19.257Z",
+    "timestamp_updated": "2022-06-20T21:44:19.257Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.11.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.11.0+ent.fips1402/vault_1.11.0+ent.fips1402_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.11.0+ent.fips1402/vault_1.11.0+ent.fips1402_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.11.0+ent.fips1402/vault_1.11.0+ent.fips1402_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.11.0+ent.fips1402"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent.hsm/vault_1.11.0+ent.hsm_linux_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-20T21:44:17.022Z"
+    },
+    "timestamp_created": "2022-06-20T21:44:17.022Z",
+    "timestamp_updated": "2022-06-20T21:44:17.022Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.11.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.11.0+ent.hsm/vault_1.11.0+ent.hsm_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.11.0+ent.hsm/vault_1.11.0+ent.hsm_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.11.0+ent.hsm/vault_1.11.0+ent.hsm_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.11.0+ent.hsm"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_darwin_amd64.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_darwin_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_freebsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_freebsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_freebsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_linux_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_linux_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_linux_arm.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_linux_arm64.zip"
+      },
+      {
+        "arch": "s390x",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_linux_s390x.zip"
+      },
+      {
+        "arch": "386",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_netbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_netbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_netbsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_openbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_openbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_openbsd_arm.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "solaris",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_solaris_amd64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_windows_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_windows_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-20T21:44:14.486Z"
+    },
+    "timestamp_created": "2022-06-20T21:44:14.486Z",
+    "timestamp_updated": "2022-06-20T21:44:14.486Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.11.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.11.0+ent/vault_1.11.0+ent_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.11.0+ent"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_darwin_amd64.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_darwin_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_freebsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_freebsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_freebsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_linux_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_linux_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_linux_arm.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_linux_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_netbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_netbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_netbsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_openbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_openbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_openbsd_arm.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "solaris",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_solaris_amd64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_windows_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_windows_amd64.zip"
+      }
+    ],
+    "license_class": "oss",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-20T21:40:09.184Z"
+    },
+    "timestamp_created": "2022-06-20T21:40:09.184Z",
+    "timestamp_updated": "2022-06-20T21:40:09.184Z",
+    "url_changelog": "https://github.com/hashicorp/vault/blob/release/1.11.x/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.11.0/vault_1.11.0_SHA256SUMS.72D7468F.sig"
+    ],
+    "url_source_repository": "https://github.com/hashicorp/vault",
+    "version": "1.11.0"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.hsm.fips1402/vault_1.11.0-rc1+ent.hsm.fips1402_linux_amd64.zip"
+      }
+    ],
+    "is_prerelease": true,
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T23:50:07.724Z"
+    },
+    "timestamp_created": "2022-06-10T23:50:07.724Z",
+    "timestamp_updated": "2022-06-10T23:50:07.724Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.11.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.hsm.fips1402/vault_1.11.0-rc1+ent.hsm.fips1402_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.hsm.fips1402/vault_1.11.0-rc1+ent.hsm.fips1402_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.hsm.fips1402/vault_1.11.0-rc1+ent.hsm.fips1402_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.11.0-rc1+ent.hsm.fips1402"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.fips1402/vault_1.11.0-rc1+ent.fips1402_linux_amd64.zip"
+      }
+    ],
+    "is_prerelease": true,
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T23:50:05.982Z"
+    },
+    "timestamp_created": "2022-06-10T23:50:05.982Z",
+    "timestamp_updated": "2022-06-10T23:50:05.982Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.11.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.fips1402/vault_1.11.0-rc1+ent.fips1402_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.fips1402/vault_1.11.0-rc1+ent.fips1402_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.fips1402/vault_1.11.0-rc1+ent.fips1402_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.11.0-rc1+ent.fips1402"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.hsm/vault_1.11.0-rc1+ent.hsm_linux_amd64.zip"
+      }
+    ],
+    "is_prerelease": true,
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T23:50:03.047Z"
+    },
+    "timestamp_created": "2022-06-10T23:50:03.047Z",
+    "timestamp_updated": "2022-06-10T23:50:03.047Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.11.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.hsm/vault_1.11.0-rc1+ent.hsm_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.hsm/vault_1.11.0-rc1+ent.hsm_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.11.0-rc1+ent.hsm/vault_1.11.0-rc1+ent.hsm_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.11.0-rc1+ent.hsm"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_darwin_amd64.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_darwin_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_freebsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_freebsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_freebsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_linux_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_linux_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_linux_arm.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_linux_arm64.zip"
+      },
+      {
+        "arch": "s390x",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_linux_s390x.zip"
+      },
+      {
+        "arch": "386",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_netbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_netbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_netbsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_openbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_openbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_openbsd_arm.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "solaris",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_solaris_amd64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_windows_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_windows_amd64.zip"
+      }
+    ],
+    "is_prerelease": true,
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T23:49:59.307Z"
+    },
+    "timestamp_created": "2022-06-10T23:49:59.307Z",
+    "timestamp_updated": "2022-06-10T23:49:59.307Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.11.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.11.0-rc1+ent/vault_1.11.0-rc1+ent_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.11.0-rc1+ent"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_darwin_amd64.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_darwin_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_freebsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_freebsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_freebsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_linux_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_linux_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_linux_arm.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_linux_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_netbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_netbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_netbsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_openbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_openbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_openbsd_arm.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "solaris",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_solaris_amd64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_windows_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_windows_amd64.zip"
+      }
+    ],
+    "is_prerelease": true,
+    "license_class": "oss",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T23:21:32.849Z"
+    },
+    "timestamp_created": "2022-06-10T23:21:32.849Z",
+    "timestamp_updated": "2022-06-10T23:21:32.849Z",
+    "url_changelog": "https://github.com/hashicorp/vault/blob/release/1.11.x/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.11.0-rc1/vault_1.11.0-rc1_SHA256SUMS.72D7468F.sig"
+    ],
+    "url_source_repository": "https://github.com/hashicorp/vault",
+    "version": "1.11.0-rc1"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent.hsm.fips1402/vault_1.10.4+ent.hsm.fips1402_linux_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T23:08:57.982Z"
+    },
+    "timestamp_created": "2022-06-10T23:08:57.982Z",
+    "timestamp_updated": "2022-06-10T23:08:57.982Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.10.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.10.4+ent.hsm.fips1402/vault_1.10.4+ent.hsm.fips1402_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.10.4+ent.hsm.fips1402/vault_1.10.4+ent.hsm.fips1402_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.10.4+ent.hsm.fips1402/vault_1.10.4+ent.hsm.fips1402_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.10.4+ent.hsm.fips1402"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent.fips1402/vault_1.10.4+ent.fips1402_linux_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T23:08:55.429Z"
+    },
+    "timestamp_created": "2022-06-10T23:08:55.429Z",
+    "timestamp_updated": "2022-06-10T23:08:55.429Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.10.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.10.4+ent.fips1402/vault_1.10.4+ent.fips1402_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.10.4+ent.fips1402/vault_1.10.4+ent.fips1402_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.10.4+ent.fips1402/vault_1.10.4+ent.fips1402_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.10.4+ent.fips1402"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent.hsm/vault_1.10.4+ent.hsm_linux_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T23:08:53.004Z"
+    },
+    "timestamp_created": "2022-06-10T23:08:53.004Z",
+    "timestamp_updated": "2022-06-10T23:08:53.004Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.10.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.10.4+ent.hsm/vault_1.10.4+ent.hsm_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.10.4+ent.hsm/vault_1.10.4+ent.hsm_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.10.4+ent.hsm/vault_1.10.4+ent.hsm_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.10.4+ent.hsm"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_darwin_amd64.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_darwin_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_freebsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_freebsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_freebsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_linux_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_linux_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_linux_arm.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_linux_arm64.zip"
+      },
+      {
+        "arch": "s390x",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_linux_s390x.zip"
+      },
+      {
+        "arch": "386",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_netbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_netbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_netbsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_openbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_openbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_openbsd_arm.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "solaris",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_solaris_amd64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_windows_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_windows_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T23:08:50.465Z"
+    },
+    "timestamp_created": "2022-06-10T23:08:50.465Z",
+    "timestamp_updated": "2022-06-10T23:08:50.465Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.10.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.10.4+ent/vault_1.10.4+ent_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.10.4+ent"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_darwin_amd64.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_darwin_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_freebsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_freebsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_freebsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_linux_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_linux_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_linux_arm.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_linux_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_netbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_netbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_netbsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_openbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_openbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_openbsd_arm.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "solaris",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_solaris_amd64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_windows_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_windows_amd64.zip"
+      }
+    ],
+    "license_class": "oss",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T22:21:11.210Z"
+    },
+    "timestamp_created": "2022-06-10T22:21:11.210Z",
+    "timestamp_updated": "2022-06-10T22:21:11.210Z",
+    "url_changelog": "https://github.com/hashicorp/vault/blob/release/1.10.x/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.10.4/vault_1.10.4_SHA256SUMS.72D7468F.sig"
+    ],
+    "url_source_repository": "https://github.com/hashicorp/vault",
+    "version": "1.10.4"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent.hsm/vault_1.9.7+ent.hsm_linux_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T22:15:54.227Z"
+    },
+    "timestamp_created": "2022-06-10T22:15:54.227Z",
+    "timestamp_updated": "2022-06-10T22:15:54.227Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.9.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.9.7+ent.hsm/vault_1.9.7+ent.hsm_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.9.7+ent.hsm/vault_1.9.7+ent.hsm_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.9.7+ent.hsm/vault_1.9.7+ent.hsm_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.9.7+ent.hsm"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_darwin_amd64.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_darwin_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_freebsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_freebsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_freebsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_linux_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_linux_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_linux_arm.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_linux_arm64.zip"
+      },
+      {
+        "arch": "s390x",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_linux_s390x.zip"
+      },
+      {
+        "arch": "386",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_netbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_netbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_netbsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_openbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_openbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_openbsd_arm.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "solaris",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_solaris_amd64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_windows_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_windows_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-10T22:15:48.710Z"
+    },
+    "timestamp_created": "2022-06-10T22:15:48.710Z",
+    "timestamp_updated": "2022-06-10T22:15:48.710Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.9.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.9.7+ent/vault_1.9.7+ent_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.9.7+ent"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_darwin_amd64.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_darwin_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_freebsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_freebsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_freebsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_linux_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_linux_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_linux_arm.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_linux_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_netbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_netbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_netbsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_openbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_openbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_openbsd_arm.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "solaris",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_solaris_amd64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_windows_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_windows_amd64.zip"
+      }
+    ],
+    "license_class": "oss",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-09T18:38:55.949Z"
+    },
+    "timestamp_created": "2022-06-09T18:38:55.949Z",
+    "timestamp_updated": "2022-06-09T18:38:55.949Z",
+    "url_changelog": "https://github.com/hashicorp/vault/blob/release/1.9.x/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.9.7/vault_1.9.7_SHA256SUMS.72D7468F.sig"
+    ],
+    "url_source_repository": "https://github.com/hashicorp/vault",
+    "version": "1.9.7"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent.hsm/vault_1.8.12+ent.hsm_linux_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-09T14:40:33.281Z"
+    },
+    "timestamp_created": "2022-06-09T14:40:33.281Z",
+    "timestamp_updated": "2022-06-09T14:40:33.281Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.8.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.8.12+ent.hsm/vault_1.8.12+ent.hsm_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.8.12+ent.hsm/vault_1.8.12+ent.hsm_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.8.12+ent.hsm/vault_1.8.12+ent.hsm_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.8.12+ent.hsm"
+  },
+  {
+    "builds": [
+      {
+        "arch": "amd64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_darwin_amd64.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "darwin",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_darwin_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_freebsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_freebsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "freebsd",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_freebsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_linux_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_linux_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_linux_arm.zip"
+      },
+      {
+        "arch": "arm64",
+        "os": "linux",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_linux_arm64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_netbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_netbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "netbsd",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_netbsd_arm.zip"
+      },
+      {
+        "arch": "386",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_openbsd_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_openbsd_amd64.zip"
+      },
+      {
+        "arch": "arm",
+        "os": "openbsd",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_openbsd_arm.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "solaris",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_solaris_amd64.zip"
+      },
+      {
+        "arch": "386",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_windows_386.zip"
+      },
+      {
+        "arch": "amd64",
+        "os": "windows",
+        "url": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_windows_amd64.zip"
+      }
+    ],
+    "license_class": "enterprise",
+    "name": "vault",
+    "status": {
+      "state": "supported",
+      "timestamp_updated": "2022-06-09T14:40:30.865Z"
+    },
+    "timestamp_created": "2022-06-09T14:40:30.865Z",
+    "timestamp_updated": "2022-06-09T14:40:30.865Z",
+    "url_changelog": "https://github.com/hashicorp/vault-enterprise/blob/release/1.8.x+ent/CHANGELOG.md",
+    "url_docker_registry_dockerhub": "https://hub.docker.com/r/hashicorp/vault-enterprise",
+    "url_docker_registry_ecr": "https://gallery.ecr.aws/hashicorp/vault-enterprise",
+    "url_license": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+    "url_project_website": "https://www.vaultproject.io/docs/enterprise",
+    "url_release_notes": "https://www.vaultproject.io/docs/release-notes",
+    "url_shasums": "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_SHA256SUMS",
+    "url_shasums_signatures": [
+      "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_SHA256SUMS.sig",
+      "https://releases.hashicorp.com/vault/1.8.12+ent/vault_1.8.12+ent_SHA256SUMS.72D7468F.sig"
+    ],
+    "version": "1.8.12+ent"
+  }
+]

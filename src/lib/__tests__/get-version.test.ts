@@ -1,7 +1,6 @@
-import got from "got";
 import * as playback from "jest-playback";
 import * as types from "../types";
-import { getVersionObject } from "../get-version";
+import { getVersionData, getVersionObject } from "../get-version";
 playback.setup(__dirname);
 
 describe("get-version", () => {
@@ -18,11 +17,7 @@ describe("get-version", () => {
       "v0.12.0",
       "0.12.1",
     ] as const)("should match %s versions", async (ver) => {
-      const result = await got(
-        "https://releases.hashicorp.com/envconsul/index.json",
-        { headers: { Accept: "application/json" } }
-      ).json();
-
+      const result = await getVersionData("envconsul", "oss");
       const v = await getVersionObject(types.IndexRt.check(result), ver);
       expect(v.version).toMatchSnapshot();
     });
@@ -30,11 +25,7 @@ describe("get-version", () => {
 
   describe("range versions - packer", () => {
     it.each(["latest"] as const)("should match %s versions", async (ver) => {
-      const result = await got(
-        "https://releases.hashicorp.com/packer/index.json",
-        { headers: { Accept: "application/json" } }
-      ).json();
-
+      const result = await getVersionData("packer", "oss");
       const v = await getVersionObject(types.IndexRt.check(result), ver);
       expect(v.version).toMatchSnapshot();
     });
@@ -44,11 +35,7 @@ describe("get-version", () => {
     it.each(["latest", "v1.2"] as const)(
       "should match %s versions",
       async (ver) => {
-        const result = await got(
-          "https://releases.hashicorp.com/nomad/index.json",
-          { headers: { Accept: "application/json" } }
-        ).json();
-
+        const result = await getVersionData("nomad", "oss");
         const v = await getVersionObject(types.IndexRt.check(result), ver);
         expect(v.version).toMatchSnapshot();
       }
@@ -57,11 +44,7 @@ describe("get-version", () => {
 
   describe("range versions - consul", () => {
     it.each(["v1.2"] as const)("should match %s versions", async (ver) => {
-      const result = await got(
-        "https://releases.hashicorp.com/consul/index.json",
-        { headers: { Accept: "application/json" } }
-      ).json();
-
+      const result = await getVersionData("consul", "oss");
       const v = await getVersionObject(types.IndexRt.check(result), ver);
       expect(v.version).toMatchSnapshot();
     });
@@ -69,11 +52,7 @@ describe("get-version", () => {
 
   describe("range versions - vault", () => {
     it.each(["v1.2"] as const)("should match %s versions", async (ver) => {
-      const result = await got(
-        "https://releases.hashicorp.com/vault/index.json",
-        { headers: { Accept: "application/json" } }
-      ).json();
-
+      const result = await getVersionData("vault", "oss");
       const v = await getVersionObject(types.IndexRt.check(result), ver);
       expect(v.version).toMatchSnapshot();
     });
