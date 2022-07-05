@@ -28,7 +28,7 @@ async function run() {
     };
     const runnerPlatform = os.platform();
     const pkgName = core.getInput("package");
-    const license_class = core.getInput("licenseClass");
+    const license_class = core.getInput("license_class");
     core.info(`configured license_class: ${license_class}`);
 
     if (!(runnerPlatform in nodePlatformToReleasePlatform)) {
