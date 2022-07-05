@@ -32,27 +32,19 @@ const ArchRt = rt.Union(
 );
 
 const BuildRt = rt.Record({
-  name: rt.String,
-  version: rt.String,
   os: OsRt,
   arch: ArchRt,
-  filename: rt.String,
   url: rt.String,
 });
 
 const VersionRt = rt.Record({
   name: rt.String,
   version: rt.String,
-  shasums: rt.String,
-  shasums_signature: rt.String,
-  shasums_signatures: rt.Array(rt.String),
+  timestamp_created: rt.String,
   builds: rt.Array(BuildRt),
 });
 
-export const IndexRt = rt.Record({
-  name: rt.String,
-  versions: rt.Dictionary(VersionRt),
-});
+export const IndexRt = rt.Array(VersionRt);
 
 export type Index = rt.Static<typeof IndexRt>;
 export type Version = rt.Static<typeof VersionRt>;

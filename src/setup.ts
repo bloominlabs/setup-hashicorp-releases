@@ -7,7 +7,7 @@ import * as core from "@actions/core";
 import * as tc from "@actions/tool-cache";
 import got from "got";
 
-import { getVersionObject } from "./lib/get-version";
+import { getVersionObject, getVersionData } from "./lib/get-version";
 import { restoreCache } from "./cache-restore";
 import * as types from "./lib/types";
 
@@ -28,6 +28,8 @@ async function run() {
     };
     const runnerPlatform = os.platform();
     const pkgName = core.getInput("package");
+    const license_class = core.getInput("license_class");
+    core.info(`configured license_class: ${license_class}`);
 
     if (!(runnerPlatform in nodePlatformToReleasePlatform)) {
       throw new Error(
@@ -37,14 +39,12 @@ async function run() {
       );
     }
 
-    let result: unknown | undefined;
+    let result: types.Index | undefined;
     try {
-      result = await got(
-        `https://releases.hashicorp.com/${pkgName}/index.json`,
-        {
-          headers: { Accept: "application/json" },
-        }
-      ).json<Record<string, unknown>>();
+      result = await getVersionData(
+        pkgName,
+        license_class as "enterprise" | "oss"
+      );
     } catch (e: unknown) {
       if (e instanceof got.RequestError && e.response?.statusCode == 404) {
         throw new Error(
@@ -61,7 +61,7 @@ async function run() {
 
     const range = core.getInput("version");
     core.info(`Configured range: ${range}`);
-    const { version, builds } = await getVersionObject(index, range);
+    const { name, version, builds } = await getVersionObject(index, range);
 
     core.info(`Matched version: ${version}`);
 
@@ -111,7 +111,7 @@ async function run() {
     }
 
     const downloaded = await tc.downloadTool(build.url, installationPath);
-    core.debug(`successfully downloaded ${build.name}@${build.version}`);
+    core.debug(`successfully downloaded ${name}@${version}`);
 
     await io.mkdirP(destination);
     core.info(`Successfully created ${destination}`);

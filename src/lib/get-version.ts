@@ -1,27 +1,70 @@
 import { maxSatisfying, gte } from "semver";
 import * as types from "./types";
+import got from "got";
+
+export async function getVersionData(
+  service: string,
+  licenseClass: "enterprise" | "oss"
+): Promise<types.Index> {
+  let previousLastTime = new Date().toISOString();
+  return await got.paginate.all<types.Version>(
+    `https://api.releases.hashicorp.com/v1/releases/${service}`,
+    {
+      headers: { Accept: "application/json" },
+      http2: true,
+      searchParams: { limit: 20, license_class: licenseClass },
+      pagination: {
+        paginate: (_, currentItems) => {
+          if (currentItems.length <= 0) {
+            return false;
+          }
+          const lastItem = currentItems[currentItems.length - 1];
+          if (previousLastTime === lastItem.timestamp_created) {
+            return false;
+          }
+
+          previousLastTime = lastItem.timestamp_created;
+          return {
+            searchParams: {
+              after: lastItem.timestamp_created,
+            },
+          };
+        },
+        requestLimit: 1000,
+        transform: (response) => {
+          if (response.request.options.responseType === "json") {
+            return types.IndexRt.check(response.body);
+          }
+          return types.IndexRt.check(JSON.parse(response.body as string));
+        },
+      },
+    }
+  );
+}
 
 export async function getVersionObject(
   index: types.Index,
   range: string
 ): Promise<types.Version> {
-  const versions = index.versions;
   if (range == "latest") {
-    const latest = Object.keys(versions).reduce((prev, cur) => {
-      return gte(cur, prev) ? cur : prev;
+    const latest = index.reduce((prev, cur) => {
+      return gte(cur.version, prev.version) ? cur : prev;
     });
     invariant(latest, "expect a latest version to exists");
-    return versions[latest];
+    return latest;
   }
 
-  const resp = maxSatisfying(Object.keys(versions), range);
-  if (resp === null) {
+  const versions = index.map((version) => version.version);
+  const maxSatisfyingSemverVersion = maxSatisfying(versions, range);
+  if (maxSatisfyingSemverVersion === null) {
     throw new Error(
       "Could not find a version that satisfied the version range"
     );
   }
 
-  const ver = versions[resp];
+  const ver = index.filter(
+    (version) => version.version == maxSatisfyingSemverVersion
+  )[0];
   if (!ver) {
     throw new Error(
       "Could not find a version that satisfied the version range"
