@@ -73839,6 +73839,7 @@ function run() {
             const runnerPlatform = os.platform();
             const pkgName = core.getInput("package");
             const license_class = core.getInput("licenseClass");
+            core.info(`configured license_class: ${license_class}`);
             if (!(runnerPlatform in nodePlatformToReleasePlatform)) {
                 throw new Error(`Unsupported operating system - ${pkgName} is only released for ${Object.keys(nodePlatformToReleasePlatform).join(", ")}`);
             }

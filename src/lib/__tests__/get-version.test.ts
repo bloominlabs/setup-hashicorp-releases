@@ -36,6 +36,7 @@ describe("get-version", () => {
       "should match %s versions",
       async (ver) => {
         const result = await getVersionData("nomad", "oss");
+        console.log(result);
         const v = await getVersionObject(types.IndexRt.check(result), ver);
         expect(v.version).toMatchSnapshot();
       }
