@@ -66,5 +66,5 @@ The action can be configured with the following arguments:
 
 - `package` - The package to install. See <https://releases.hashicorp.com/index.json> for all available packages.
 - `version` (optional) - The version of the package to install. Default is `latest`. Accepts semver style values.
-- `license_class` (optional) - The type of license required for the package. Either `enterprise` or `oss`.
-- `include_prerelease` (optional) - Should prerelease versions be considered when finding the semver match.
+- `license_class` (optional) - The type of license required for the package. Either `enterprise` or `oss` (default).
+- `include_prerelease` (optional) - Should prerelease versions be considered when finding the semver match. Default is `false`.
