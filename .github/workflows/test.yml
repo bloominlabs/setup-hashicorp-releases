@@ -226,3 +226,26 @@ jobs:
           package: consul-template 
           version: v0.30.0
       - run: consul-template --version
+
+  sentinel:
+    name: Test Sentinel Install
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - uses: actions/setup-node@v3
+        with:
+          cache: ${{ !env.ACT && 'pnpm' || '' }}
+          node-version: "16.x"
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm package
+      - uses: ./
+        with:
+          package: sentinel
+          version: v0.19.5
+      - run: sentinel --version

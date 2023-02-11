@@ -71,4 +71,12 @@ describe("get-version", () => {
       expect(v.version).toMatchSnapshot();
     });
   });
+
+  describe("range versions - sentinel", () => {
+    it.each(["v0.19.0"] as const)("should match %s versions", async (ver) => {
+      const result = await getVersionData("sentinel", "oss");
+      const v = await getVersionObject(types.IndexRt.check(result), ver);
+      expect(v.version).toMatchSnapshot();
+    });
+  });
 });

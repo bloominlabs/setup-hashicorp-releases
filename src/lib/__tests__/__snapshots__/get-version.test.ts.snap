@@ -30,4 +30,6 @@ exports[`get-version range versions - nomad should match v1.2 versions 1`] = `"1
 
 exports[`get-version range versions - packer should match latest versions 1`] = `"1.8.5"`;
 
+exports[`get-version range versions - sentinel should match v0.19.0 versions 1`] = `"0.19.0"`;
+
 exports[`get-version range versions - vault should match v1.2 versions 1`] = `"1.2.7"`;
