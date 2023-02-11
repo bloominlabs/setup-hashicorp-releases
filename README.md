@@ -10,26 +10,47 @@ Install the latest version of the envconsul:
 
 ```yaml
 - name: Install envconsul
-  uses: bloominlabs/setup-hashicorp-releases@v1
+  uses: bloominlabs/setup-hashicorp-releases@v2
   with:
     package: envconsul
+```
+
+Install the latest (potentially prerelease) version of envconsul
+
+```yaml
+- name: Install envconsul
+  uses: bloominlabs/setup-hashicorp-releases@v2
+  with:
+    package: envconsul
+    include_prerelease: true
 ```
 
 Install a specific version of the envconsul:
 
 ```yaml
 - name: Install envconsul
-  uses: bloominlabs/setup-hashicorp-releases@v1
+  uses: bloominlabs/setup-hashicorp-releases@v2
   with:
     package: envconsul
     version: 0.12.1
+```
+
+Install a specific prerelease version of nomad:
+
+```yaml
+- name: Install nomad
+  uses: bloominlabs/setup-hashicorp-releases@v2
+  with:
+    package: nomad
+    version: 1.5.0-beta.1
+    include_prerelease: true
 ```
 
 Install a version that adheres to a semver range
 
 ```yaml
 - name: Install envconsul
-  uses: bloominlabs/setup-hashicorp-releases@v1
+  uses: bloominlabs/setup-hashicorp-releases@v2
   with:
     package: envconsul
     version: ^0.12.0
@@ -46,3 +67,4 @@ The action can be configured with the following arguments:
 - `package` - The package to install. See <https://releases.hashicorp.com/index.json> for all available packages.
 - `version` (optional) - The version of the package to install. Default is `latest`. Accepts semver style values.
 - `license_class` (optional) - The type of license required for the package. Either `enterprise` or `oss`.
+- `include_prerelease` (optional) - Should prerelease versions be considered when finding the semver match.

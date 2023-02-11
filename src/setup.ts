@@ -29,6 +29,8 @@ async function run() {
     const runnerPlatform = os.platform();
     const pkgName = core.getInput("package");
     const license_class = core.getInput("license_class");
+    const include_prerelease = core.getBooleanInput("include_prerelease");
+
     core.info(`configured license_class: ${license_class}`);
 
     if (!(runnerPlatform in nodePlatformToReleasePlatform)) {
@@ -43,7 +45,7 @@ async function run() {
     try {
       result = await getVersionData(
         pkgName,
-        license_class as "enterprise" | "oss"
+        license_class as "enterprise" | "oss",
       );
     } catch (e: unknown) {
       if (e instanceof got.RequestError && e.response?.statusCode == 404) {
@@ -61,7 +63,7 @@ async function run() {
 
     const range = core.getInput("version");
     core.info(`Configured range: ${range}`);
-    const { name, version, builds } = await getVersionObject(index, range);
+    const { name, version, builds } = await getVersionObject(index, range, include_prerelease);
 
     core.info(`Matched version: ${version}`);
 

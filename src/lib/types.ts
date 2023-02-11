@@ -40,6 +40,7 @@ const BuildRt = rt.Record({
 const VersionRt = rt.Record({
   name: rt.String,
   version: rt.String,
+  is_prerelease: rt.Boolean,
   timestamp_created: rt.String,
   builds: rt.Array(BuildRt),
 });
