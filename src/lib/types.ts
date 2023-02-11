@@ -9,7 +9,8 @@ const OsRt = rt.Union(
   rt.Literal("openbsd"),
   rt.Literal("solaris"),
   rt.Literal("windows"),
-  rt.Literal("web")
+  rt.Literal("web"),
+  rt.Literal("plan9"),
 );
 
 const ArchRt = rt.Union(
@@ -37,7 +38,7 @@ const BuildRt = rt.Record({
   url: rt.String,
 });
 
-const VersionRt = rt.Record({
+export const VersionRt = rt.Record({
   name: rt.String,
   version: rt.String,
   is_prerelease: rt.Boolean,

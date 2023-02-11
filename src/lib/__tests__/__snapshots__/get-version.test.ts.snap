@@ -2,6 +2,8 @@
 
 exports[`get-version range versions - consul should match v1.2 versions 1`] = `"1.2.4"`;
 
+exports[`get-version range versions - consul-template should match latest versions 1`] = `"0.30.0"`;
+
 exports[`get-version range versions - envconsul should match ^0 versions 1`] = `"0.13.1"`;
 
 exports[`get-version range versions - envconsul should match 0.*.* versions 1`] = `"0.13.1"`;

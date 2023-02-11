@@ -1,6 +1,8 @@
 import { maxSatisfying, gte } from "semver";
-import * as types from "./types";
 import got from "got";
+import { ValidationError } from 'runtypes';
+
+import * as types from "./types";
 
 export async function getVersionData(
   service: string,
@@ -35,6 +37,21 @@ export async function getVersionData(
           if (response.request.options.responseType === "json") {
             return types.IndexRt.check(response.body);
           }
+
+          // used for debugging runtypes errors
+          // JSON.parse(response.body as any).forEach((element: any) => {
+          //   try {
+          //     types.VersionRt.check(element)
+          //   } catch (e) {
+          //     if (e instanceof ValidationError) {
+          //       console.log(element.version)
+          //       console.log(e.details)
+          //       throw (e)
+          //     } else
+          //       throw (e)
+          //   }
+          // })
+
           return types.IndexRt.check(JSON.parse(response.body as string));
         },
       },

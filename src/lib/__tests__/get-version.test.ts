@@ -63,4 +63,12 @@ describe("get-version", () => {
       expect(v.version).toMatchSnapshot();
     });
   });
+
+  describe("range versions - consul-template", () => {
+    it.each(["latest"] as const)("should match %s versions", async (ver) => {
+      const result = await getVersionData("consul-template", "oss");
+      const v = await getVersionObject(types.IndexRt.check(result), ver);
+      expect(v.version).toMatchSnapshot();
+    });
+  });
 });
