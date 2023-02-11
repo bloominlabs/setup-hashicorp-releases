@@ -1,6 +1,6 @@
 {
   "name": "setup-hashicorp-releases",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "private": true,
   "description": "Setup a binary from releases.hashicorp.com in a GitHub Actions build environment",
   "main": "dist/setup/index.js",
