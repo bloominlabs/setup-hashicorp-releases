@@ -4,7 +4,7 @@ import got from "got";
 
 export async function getVersionData(
   service: string,
-  licenseClass: "enterprise" | "oss"
+  licenseClass: "enterprise" | "oss",
 ): Promise<types.Index> {
   let previousLastTime = new Date().toISOString();
   return await got.paginate.all<types.Version>(
@@ -44,21 +44,30 @@ export async function getVersionData(
 
 export async function getVersionObject(
   index: types.Index,
-  range: string
+  range: string,
+  include_prerelease = false,
 ): Promise<types.Version> {
   if (range == "latest") {
-    const latest = index.reduce((prev, cur) => {
+    const latest = index.filter((value) => {
+      if (include_prerelease) {
+        return true
+      } else {
+        return value.is_prerelease === false;
+      }
+    }).reduce((prev, cur) => {
       return gte(cur.version, prev.version) ? cur : prev;
     });
-    invariant(latest, "expect a latest version to exists");
+    invariant(latest, "expect a latest version to exists. if you only have a prerelease version, make sure 'include_prerelease' option is specified");
     return latest;
   }
 
   const versions = index.map((version) => version.version);
-  const maxSatisfyingSemverVersion = maxSatisfying(versions, range);
+  const maxSatisfyingSemverVersion = maxSatisfying(versions, range, {
+    includePrerelease: include_prerelease
+  });
   if (maxSatisfyingSemverVersion === null) {
     throw new Error(
-      "Could not find a version that satisfied the version range"
+      "Could not find a version that satisfied the version range. if you're trying to find a prerelease version, be sure you specified the 'include_prerelease' option"
     );
   }
 
@@ -67,7 +76,7 @@ export async function getVersionObject(
   )[0];
   if (!ver) {
     throw new Error(
-      "Could not find a version that satisfied the version range"
+      "Could not find a version that satisfied the version range after finding the version match. this indicates a bug in the action. please file an issue with a minimum viable reproduction"
     );
   }
 

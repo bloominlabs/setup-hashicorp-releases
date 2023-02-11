@@ -36,11 +36,16 @@ describe("get-version", () => {
       "should match %s versions",
       async (ver) => {
         const result = await getVersionData("nomad", "oss");
-        console.log(result);
         const v = await getVersionObject(types.IndexRt.check(result), ver);
         expect(v.version).toMatchSnapshot();
       }
     );
+
+    it("handles prerelease versions", async () => {
+      const result = await getVersionData("nomad", "oss");
+      const v = await getVersionObject(types.IndexRt.check(result), "^1.5.0-beta.1");
+      expect(v.version).toMatchSnapshot();
+    })
   });
 
   describe("range versions - consul", () => {

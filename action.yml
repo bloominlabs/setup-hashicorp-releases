@@ -12,6 +12,9 @@ inputs:
   license_class:
     description: "License class to filter releases to. Either 'enterprise' or 'oss' (default). See the hashicorp releases API for more details (https://releases.hashicorp.com/docs/api/v1/#operation/listReleasesV1)."
     default: "oss"
+  include_prerelease:
+    description: "Should prerelease versions be considered when resolving the semver version. defaults to false"
+    default: false
 branding:
   icon: "terminal"
   color: "purple"
