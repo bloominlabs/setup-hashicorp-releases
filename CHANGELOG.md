@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/bloominlabs/setup-hashicorp-releases/compare/v2.0.0...v2.0.1) (2025-01-04)
+
+
+### Bug Fixes
+
+* null build breaks get-versions ([7ab9240](https://github.com/bloominlabs/setup-hashicorp-releases/commit/7ab9240661c7db0400cc9a4b839929467f30947a))
+
 ## [2.0.0](https://github.com/bloominlabs/setup-hashicorp-releases/compare/v1.0.6...v2.0.0) (2023-02-11)
 
 
