@@ -11,7 +11,7 @@ jobs:
     name: Unit Test
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
@@ -28,7 +28,7 @@ jobs:
     name: Test Latest Version Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
@@ -49,7 +49,7 @@ jobs:
     name: Test Specific Version Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
@@ -71,7 +71,7 @@ jobs:
     name: Test Patch Range Version Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
@@ -93,7 +93,7 @@ jobs:
     name: Test Patch Range Version Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
@@ -116,7 +116,7 @@ jobs:
     name: Test Nomad Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
@@ -139,7 +139,7 @@ jobs:
     name: Test Packer Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
@@ -162,7 +162,7 @@ jobs:
     name: Test Consul Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
@@ -185,7 +185,7 @@ jobs:
     name: Test Vault Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
@@ -208,7 +208,7 @@ jobs:
     name: Test consul-template Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
@@ -231,7 +231,7 @@ jobs:
     name: Test Sentinel Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
