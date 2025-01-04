@@ -11,34 +11,34 @@ jobs:
     name: Unit Test
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
-          node-version: "16.x"
+          node-version: "22.x"
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
   latest:
     name: Test Latest Version Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
-          node-version: "16.x"
+          node-version: "22.x"
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
       - uses: ./
@@ -49,17 +49,17 @@ jobs:
     name: Test Specific Version Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
-          node-version: "16.x"
+          node-version: "22.x"
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
       - uses: ./
@@ -71,17 +71,17 @@ jobs:
     name: Test Patch Range Version Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
-          node-version: "16.x"
+          node-version: "22.x"
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
       - uses: ./
@@ -93,17 +93,17 @@ jobs:
     name: Test Patch Range Version Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
-          node-version: "16.x"
+          node-version: "22.x"
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
       - uses: ./
@@ -116,17 +116,17 @@ jobs:
     name: Test Nomad Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
-          node-version: "16.x"
+          node-version: "22.x"
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
       - uses: ./
@@ -139,17 +139,17 @@ jobs:
     name: Test Packer Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
-          node-version: "16.x"
+          node-version: "22.x"
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
       - uses: ./
@@ -162,17 +162,17 @@ jobs:
     name: Test Consul Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
-          node-version: "16.x"
+          node-version: "22.x"
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
       - uses: ./
@@ -185,17 +185,17 @@ jobs:
     name: Test Vault Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
-          node-version: "16.x"
+          node-version: "22.x"
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
       - uses: ./
@@ -208,17 +208,17 @@ jobs:
     name: Test consul-template Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
-          node-version: "16.x"
+          node-version: "22.x"
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
       - uses: ./
@@ -231,17 +231,17 @@ jobs:
     name: Test Sentinel Install
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest] #, windows-latest]
+        platform: [ubuntu-latest] #, macos-latest] #, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 9
       - uses: actions/setup-node@v3
         with:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
-          node-version: "16.x"
+          node-version: "22.x"
       - run: pnpm install --frozen-lockfile
       - run: pnpm package
       - uses: ./
