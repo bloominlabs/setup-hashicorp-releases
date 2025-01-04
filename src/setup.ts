@@ -102,7 +102,7 @@ async function run() {
         core.info(`Successfully deleted pre-existing ${installationDir}`);
       });
 
-    const build = builds.find((b) => {
+    const build = builds?.find((b) => {
       return b.os == releasePlatform && b.arch == releaseArch;
     });
 

@@ -43,7 +43,7 @@ export const VersionRt = rt.Record({
   version: rt.String,
   is_prerelease: rt.Boolean,
   timestamp_created: rt.String,
-  builds: rt.Array(BuildRt),
+  builds: rt.Union(rt.Array(BuildRt), rt.Null),
 });
 
 export const IndexRt = rt.Array(VersionRt);
